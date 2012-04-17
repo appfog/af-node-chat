@@ -1,5 +1,5 @@
 HOST = null; // localhost
-PORT = 8001;
+PORT = process.env.VMC_APP_PORT || 8001;
 
 // when the daemon started
 var starttime = (new Date()).getTime();
@@ -12,7 +12,7 @@ setInterval(function () {
 
 
 var fu = require("./fu"),
-    sys = require("sys"),
+    sys = require("util"),
     url = require("url"),
     qs = require("querystring");
 
